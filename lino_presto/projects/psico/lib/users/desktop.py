@@ -1,5 +1,4 @@
-# -*- coding: UTF-8 -*-
-# Copyright 2013-2016 Luc Saffre
+# Copyright 2016 Luc Saffre
 # This file is part of Lino Presto.
 #
 # Lino Presto is free software: you can redistribute it and/or modify
@@ -16,9 +15,27 @@
 # License along with Lino Presto.  If not, see
 # <http://www.gnu.org/licenses/>.
 
-"""Database models for :mod:`lino_welfare.modlib.users`.
+"""Desktop UI for this plugin.
 
 """
 
-from lino.modlib.users.models import *
+from lino.modlib.users.desktop import *
+
+
+class UserDetail(UserDetail):
+    """Layout of User Detail in Lino Presto."""
+
+    main = """
+    box1
+    remarks:40 AuthoritiesGiven:20
+    """
+
+    box1 = """
+    username profile:20 partner
+    first_name last_name initials
+    email language timezone team
+    id created modified
+    """
+
+Users.detail_layout = UserDetail()
 

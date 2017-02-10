@@ -38,7 +38,7 @@ add('40', _("Later"), 'later')
 
 
 class SessionStates(dd.Workflow):
-    required_roles = dd.required(dd.SiteAdmin)
+    required_roles = dd.login_required(dd.SiteAdmin)
     invoiceable = models.BooleanField(_("invoiceable"), default=True)
 
 add = SessionStates.add_item

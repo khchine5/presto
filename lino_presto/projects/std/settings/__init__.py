@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2011-2016 Luc Saffre
+# Copyright 2011-2017 Luc Saffre
 # This file is part of Lino Presto.
 # Lino Presto is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -27,8 +27,9 @@ class Site(Site):
     languages = 'en de fr et'
 
     project_model = 'tickets.Project'
+    workflows_module = 'lino_noi.lib.noi.workflows'
 
-    user_profiles_module = 'lino_presto.lib.presto.roles'
+    user_types_module = 'lino_presto.lib.presto.user_types'
 
     def get_installed_apps(self):
         yield super(Site, self).get_installed_apps()
@@ -54,10 +55,11 @@ class Site(Site):
         yield 'lino_xl.lib.blogs'
         yield 'lino_xl.lib.notes'
         yield 'lino_noi.lib.faculties'
+        # yield 'lino_noi.lib.tickets'
         yield 'lino_noi.projects.team.lib.clocking'
         yield 'lino_noi.lib.deploy'
         # yield 'lino_presto.lib.clocking'
-        # yield 'lino.modlib.uploads'
+        yield 'lino.modlib.uploads'
         yield 'lino_xl.lib.extensible'
         yield 'lino_xl.lib.cal'
         # yield 'lino_xl.lib.outbox'
@@ -78,7 +80,7 @@ class Site(Site):
         super(Site, self).setup_plugins()
         self.plugins.countries.configure(country_code='BE')
 
-    def get_admin_main_items(self, ar):
+    def unused_get_dashboard_items(self, user):
         if False:
             from lino.utils.weekly import get_report
 

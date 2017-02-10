@@ -10,7 +10,7 @@
 
 extensions = []
 
-from atelier.sphinxconf import configure
+from lino.sphinxcontrib import configure
 configure(globals(), 'lino_presto.projects.std.settings.doctests')
 
 extensions += ['lino.sphinxcontrib.logo']

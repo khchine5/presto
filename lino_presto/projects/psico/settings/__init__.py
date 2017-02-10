@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2016 Luc Saffre
+# Copyright 2016-2017 Luc Saffre
 #
 # This file is part of Lino Presto.
 #
@@ -34,38 +34,75 @@ The settings package.
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from lino_presto.projects.std.settings import *
+from lino.projects.std.settings import *
 
 
 class Site(Site):
 
     verbose_name = "Lino for psychologists"
 
+    version = "0.1"
+    url = "http://presto.lino-framework.org/psico"
+    
     demo_fixtures = 'std demo novat minimal_ledger demo_bookings payments demo2'.split()
     project_model = 'contacts.Partner'
 
+    languages = 'en de fr et'
+    
+    workflows_module = 'lino_noi.lib.noi.workflows'
+
+    user_types_module = 'lino_presto.lib.presto.user_types'
+
     def get_installed_apps(self):
         yield super(Site, self).get_installed_apps()
+        yield 'lino.modlib.gfks'
+        # yield 'lino.modlib.users'
+        yield 'lino_presto.projects.psico.lib.users'
+        yield 'lino_xl.lib.countries'
+        yield 'lino_xl.lib.properties'
+        yield 'lino_presto.projects.psico.lib.contacts'
+        yield 'lino_xl.lib.households'
+        yield 'lino_presto.projects.psico.lib.lists'
+        yield 'lino_xl.lib.addresses'
+        yield 'lino_xl.lib.humanlinks',
+        # yield 'lino_xl.lib.products'
+        # yield 'lino_noi.lib.products'
+        # yield 'lino_cosi.lib.accounts'
+        yield 'lino_cosi.lib.sales'
+        # yield 'lino_cosi.lib.vat'
+        yield 'lino_cosi.lib.sepa'
+        yield 'lino_cosi.lib.finan'
+        yield 'lino_cosi.lib.invoicing'
+        # 'lino_xl.lib.projects',
+        yield 'lino_xl.lib.blogs'
+        yield 'lino_xl.lib.notes'
+        yield 'lino_noi.lib.faculties'
+        # yield 'lino_noi.lib.votes'
+        # yield 'lino_noi.lib.tickets'
+        yield 'lino_presto.projects.psico.lib.clocking'
+        # yield 'lino_noi.lib.deploy'
+        # yield 'lino_presto.lib.clocking'
+        # yield 'lino.modlib.uploads'
+        yield 'lino_xl.lib.extensible'
+        yield 'lino_xl.lib.cal'
+        # yield 'lino_xl.lib.outbox'
+        yield 'lino_xl.lib.excerpts'
+        yield 'lino_xl.lib.appypod'
+        # yield 'lino_xl.lib.postings'
+        # yield 'lino_xl.lib.pages'
+
+        yield 'lino.modlib.export_excel'
+        yield 'lino.modlib.plausibility'
+        yield 'lino.modlib.tinymce'
+        # yield 'lino.modlib.wkhtmltopdf'
+        yield 'lino.modlib.weasyprint'
+
+        yield 'lino_presto.lib.presto'
         yield 'lino_presto.projects.psico.lib.teams'
 
-    def get_apps_modifiers(self, **kw):
-        kw = super(Site, self).get_apps_modifiers(**kw)
-        # remove whole plugin:
-        kw.update(deploy=None)
-        # kw.update(tickets=None)
-        # alternative implementations:
-        # kw.update(tickets='lino_noi.projects.care.lib.tickets')
-        kw.update(clocking='lino_presto.projects.psico.lib.clocking')
-        kw.update(contacts='lino_presto.projects.psico.lib.contacts')
-        kw.update(lists='lino_presto.projects.psico.lib.lists')
-        kw.update(users='lino_presto.projects.psico.lib.users')
-        return kw
-
     def setup_plugins(self):
-        """Change the default value of certain plugin settings.
-
-        """
         super(Site, self).setup_plugins()
+        self.plugins.countries.configure(country_code='BE')
         self.plugins.clocking.configure(ticket_model='contacts.Partner')
 
 # the following line should not be active in a checked-in version

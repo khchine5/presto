@@ -18,14 +18,20 @@
 
 
 """Defines a default set of user roles and fills
-:class:`lino.modlib.users.choicelists.UserProfiles`.
+:class:`lino.modlib.users.choicelists.UserTypes`.
+
+This is used as the :attr:`user_types_module
+<lino.core.site.Site.user_types_module>` for
+:mod:`lino_presto.projects.std`.
+
 
 """
 
 from lino.api import _
-from lino.modlib.users.choicelists import UserProfiles
+from lino.modlib.users.choicelists import UserTypes
 from lino.core.roles import UserRole, SiteAdmin
 from lino_xl.lib.contacts.roles import ContactsUser
+from lino_xl.lib.excerpts.roles import ExcerptsUser, ExcerptsStaff
 from lino.modlib.office.roles import OfficeStaff, OfficeUser
 from lino_cosi.lib.ledger.roles import LedgerUser, LedgerStaff
 from lino_cosi.lib.sepa.roles import SepaUser, SepaStaff
@@ -33,21 +39,23 @@ from lino_noi.lib.tickets.roles import Triager
 from lino_noi.lib.clocking.roles import Worker
 
 
-class Secretary(ContactsUser, OfficeUser, LedgerUser, SepaUser):
+class Secretary(ContactsUser, OfficeUser, LedgerUser, SepaUser,
+                ExcerptsUser):
     pass
 
 
-class Consultant(ContactsUser, OfficeUser, LedgerUser, SepaUser, Worker):
+class Consultant(ContactsUser, OfficeUser, LedgerUser, SepaUser,
+                 Worker, ExcerptsUser):
     pass
 
 
 class SiteAdmin(SiteAdmin, OfficeStaff, LedgerStaff, SepaStaff,
-                Worker, Triager):
+                Worker, Triager, ExcerptsStaff):
     pass
 
-UserProfiles.clear()
+UserTypes.clear()
 
-add = UserProfiles.add_item
+add = UserTypes.add_item
 
 add('000', _("Anonymous"), UserRole, name='anonymous', readonly=True)
 add('100', _("Secretary"), Secretary)

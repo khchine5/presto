@@ -39,6 +39,10 @@ class Partner(Partner, AddressOwner, mixins.CreatedModified):
 
     hidden_columns = 'created modified'
 
+    faculty = None
+    """Required by :mod:`lino_noi.lib.clocking`.
+    """
+
     def get_overview_elems(self, ar):
         # In the base classes, Partner must come first because
         # otherwise Django won't inherit `meta.verbose_name`. OTOH we

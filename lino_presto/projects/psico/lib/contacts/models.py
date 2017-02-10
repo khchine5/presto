@@ -24,9 +24,10 @@ from lino.api import _
 from lino_presto.lib.contacts.models import *
 
 from .choicelists import PartnerTariffs
+from lino_noi.lib.clocking.mixins import Workable
 
 
-class Partner(Partner):
+class Partner(Partner, Workable):
 
     class Meta(Partner.Meta):
         app_label = 'contacts'
@@ -52,3 +53,5 @@ class Company(Partner, Company):
         app_label = 'contacts'
         abstract = dd.is_abstract_model(__name__, 'Company')
 
+
+dd.update_field(Person, 'first_name', blank=True)
