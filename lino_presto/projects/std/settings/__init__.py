@@ -45,20 +45,21 @@ class Site(Site):
         yield 'lino_xl.lib.humanlinks',
         # yield 'lino_xl.lib.products'
         # yield 'lino_noi.lib.products'
-        # yield 'lino_cosi.lib.accounts'
-        yield 'lino_cosi.lib.sales'
-        # yield 'lino_cosi.lib.vat'
-        yield 'lino_cosi.lib.sepa'
-        yield 'lino_cosi.lib.finan'
-        yield 'lino_cosi.lib.invoicing'
+        # yield 'lino_xl.lib.accounts'
+        yield 'lino_xl.lib.sales'
+        # yield 'lino_xl.lib.vat'
+        yield 'lino_xl.lib.sepa'
+        yield 'lino_xl.lib.finan'
+        yield 'lino_xl.lib.invoicing'
         # 'lino_xl.lib.projects',
         yield 'lino_xl.lib.blogs'
         yield 'lino_xl.lib.notes'
+        yield 'lino_presto.lib.tickets'
         yield 'lino_noi.lib.faculties'
-        # yield 'lino_noi.lib.tickets'
-        yield 'lino_noi.projects.team.lib.clocking'
-        yield 'lino_noi.lib.deploy'
+        yield 'lino_noi.lib.votes'
         # yield 'lino_presto.lib.clocking'
+        yield 'lino_noi.projects.team.lib.clocking'
+        # yield 'lino_noi.lib.deploy'
         yield 'lino.modlib.uploads'
         yield 'lino_xl.lib.extensible'
         yield 'lino_xl.lib.cal'
@@ -79,6 +80,8 @@ class Site(Site):
     def setup_plugins(self):
         super(Site, self).setup_plugins()
         self.plugins.countries.configure(country_code='BE')
+        self.plugins.comments.configure(
+            commentable_model='tickets.Ticket')
 
     def unused_get_dashboard_items(self, user):
         if False:

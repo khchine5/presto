@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2015-2016 Luc Saffre
+# Copyright 2015-2017 Luc Saffre
 # This file is part of Lino Presto.
 #
 # Lino Presto is free software: you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 
     contacts
     presto
+    tickets
 
 
 """

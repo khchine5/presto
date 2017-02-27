@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2015-2016 Luc Saffre
+# Copyright 2015-2017 Luc Saffre
 # This file is part of Lino Presto.
 # Lino Presto is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -102,6 +102,7 @@ lino_presto.lib.contacts
 lino_presto.lib.contacts.fixtures
 lino_presto.lib.presto
 lino_presto.lib.presto.fixtures
+lino_presto.lib.tickets
 lino_presto.projects
 lino_presto.projects.std
 lino_presto.projects.std.settings

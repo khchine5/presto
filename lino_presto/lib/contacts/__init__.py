@@ -20,7 +20,7 @@
 An extension of :mod:`lino_xl.lib.contacts`
 """
 
-from lino_cosi.lib.contacts import Plugin
+from lino_xl.lib.contacts import Plugin
 
 
 class Plugin(Plugin):

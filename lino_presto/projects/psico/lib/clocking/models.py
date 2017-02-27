@@ -22,7 +22,7 @@ from lino.api import _
 
 from lino_noi.lib.clocking.models import *
 
-from lino_cosi.lib.invoicing.mixins import Invoiceable
+from lino_xl.lib.invoicing.mixins import Invoiceable
 
 from .choicelists import PaymentModes, SessionStates
 
