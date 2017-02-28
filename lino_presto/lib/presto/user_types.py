@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright 2016 Luc Saffre
+# Copyright 2016-2017 Luc Saffre
 # This file is part of Lino Presto.
 #
 # Lino Presto is free software: you can redistribute it and/or modify
@@ -31,6 +31,7 @@ from lino.api import _
 from lino.modlib.users.choicelists import UserTypes
 from lino.core.roles import UserRole, SiteAdmin
 from lino_xl.lib.contacts.roles import ContactsUser
+from lino_xl.lib.products.roles import ProductsUser, ProductsStaff
 from lino_xl.lib.excerpts.roles import ExcerptsUser, ExcerptsStaff
 from lino.modlib.office.roles import OfficeStaff, OfficeUser
 from lino_xl.lib.ledger.roles import LedgerUser, LedgerStaff
@@ -40,17 +41,17 @@ from lino_noi.lib.clocking.roles import Worker
 
 
 class Secretary(ContactsUser, OfficeUser, LedgerUser, SepaUser,
-                ExcerptsUser):
+                ExcerptsUser, ProductsStaff):
     pass
 
 
 class Consultant(ContactsUser, OfficeUser, LedgerUser, SepaUser,
-                 Worker, ExcerptsUser):
+                 Worker, ExcerptsUser, ProductsUser):
     pass
 
 
 class SiteAdmin(SiteAdmin, OfficeStaff, LedgerStaff, SepaStaff,
-                Worker, Triager, ExcerptsStaff):
+                Worker, Triager, ExcerptsStaff, ProductsStaff):
     pass
 
 UserTypes.clear()
