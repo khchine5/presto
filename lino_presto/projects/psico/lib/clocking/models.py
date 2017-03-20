@@ -20,7 +20,7 @@ from __future__ import unicode_literals
 
 from lino.api import _
 
-from lino_noi.lib.clocking.models import *
+from lino_xl.lib.clocking.models import *
 
 from lino_xl.lib.invoicing.mixins import Invoiceable
 

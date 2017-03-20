@@ -49,7 +49,7 @@ class Site(Site):
 
     languages = 'en de fr et'
     
-    # workflows_module = 'lino_noi.lib.tickets.workflows'
+    # workflows_module = 'lino_xl.lib.tickets.workflows'
 
     user_types_module = 'lino_presto.lib.presto.user_types'
 
@@ -77,10 +77,10 @@ class Site(Site):
         yield 'lino_xl.lib.blogs'
         yield 'lino_xl.lib.notes'
         # yield 'lino_presto.lib.tickets'
-        yield 'lino_noi.lib.faculties'
-        # yield 'lino_noi.lib.votes'
+        yield 'lino_xl.lib.faculties'
+        # yield 'lino_xl.lib.votes'
         yield 'lino_presto.projects.psico.lib.clocking'
-        # yield 'lino_noi.lib.deploy'
+        # yield 'lino_xl.lib.deploy'
         # yield 'lino_presto.lib.clocking'
         # yield 'lino.modlib.uploads'
         yield 'lino_xl.lib.extensible'

@@ -29,7 +29,7 @@ The `clocking` plugins specific to :ref:`psico`.
 
 """
 
-from lino_noi.lib.clocking import Plugin
+from lino_xl.lib.clocking import Plugin
 
 
 class Plugin(Plugin):

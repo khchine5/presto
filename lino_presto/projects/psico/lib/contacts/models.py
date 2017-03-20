@@ -24,7 +24,7 @@ from lino.api import _
 from lino_presto.lib.contacts.models import *
 
 from .choicelists import PartnerTariffs
-from lino_noi.lib.clocking.mixins import Workable
+from lino_xl.lib.clocking.mixins import Workable
 
 
 class Partner(Partner, Workable):

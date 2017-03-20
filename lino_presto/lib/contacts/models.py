@@ -40,7 +40,7 @@ class Partner(Partner, AddressOwner, mixins.CreatedModified):
     hidden_columns = 'created modified'
 
     faculty = None
-    """Required by :mod:`lino_noi.lib.clocking`.
+    """Required by :mod:`lino_xl.lib.clocking`.
     """
 
     def get_overview_elems(self, ar):

@@ -36,8 +36,8 @@ from lino_xl.lib.excerpts.roles import ExcerptsUser, ExcerptsStaff
 from lino.modlib.office.roles import OfficeStaff, OfficeUser
 from lino_xl.lib.ledger.roles import LedgerUser, LedgerStaff
 from lino_xl.lib.sepa.roles import SepaUser, SepaStaff
-from lino_noi.lib.tickets.roles import Triager
-from lino_noi.lib.clocking.roles import Worker
+from lino_xl.lib.tickets.roles import Triager
+from lino_xl.lib.clocking.roles import Worker
 
 
 class Secretary(ContactsUser, OfficeUser, LedgerUser, SepaUser,
