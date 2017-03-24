@@ -59,7 +59,7 @@ class Site(Site):
         yield 'lino_xl.lib.votes'
         # yield 'lino_presto.lib.clocking'
         yield 'lino_noi.projects.team.lib.clocking'
-        # yield 'lino_xl.lib.deploy'
+        yield 'lino_xl.lib.deploy'
         yield 'lino.modlib.uploads'
         yield 'lino_xl.lib.extensible'
         yield 'lino_xl.lib.cal'
