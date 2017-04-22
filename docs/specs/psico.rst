@@ -77,17 +77,17 @@ Therapeutical groups
 lino_presto.projects.psico.lib.lists (extends_models=['List'])
 
 >>> rt.show(lists.Lists)
-=========== ======================= ======================= ======================= ===========
- Reference   Designation             Designation (de)        Designation (fr)        List Type
------------ ----------------------- ----------------------- ----------------------- -----------
-             Women's group 2014      Women's group 2014      Women's group 2014
-             Men's group 2014        Men's group 2014        Men's group 2014
-             Children's group 2014   Children's group 2014   Children's group 2014
-             Women's group 2015      Women's group 2015      Women's group 2015
-             Men's group 2015        Men's group 2015        Men's group 2015
-             Children's group 2015   Children's group 2015   Children's group 2015
-             Women's group 2016      Women's group 2016      Women's group 2016
-             Men's group 2016        Men's group 2016        Men's group 2016
-             Children's group 2016   Children's group 2016   Children's group 2016
-=========== ======================= ======================= ======================= ===========
+=========== ========================= ===========
+ Reference   Description               List Type
+----------- ------------------------- -----------
+             *Women's group 2014*
+             *Men's group 2014*
+             *Children's group 2014*
+             *Women's group 2015*
+             *Men's group 2015*
+             *Children's group 2015*
+             *Women's group 2016*
+             *Men's group 2016*
+             *Children's group 2016*
+=========== ========================= ===========
 <BLANKLINE>
