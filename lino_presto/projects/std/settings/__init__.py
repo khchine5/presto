@@ -80,8 +80,8 @@ class Site(Site):
     def setup_plugins(self):
         super(Site, self).setup_plugins()
         self.plugins.countries.configure(country_code='BE')
-        self.plugins.comments.configure(
-            commentable_model='tickets.Ticket')
+        # self.plugins.comments.configure(
+        #     commentable_model='tickets.Ticket')
 
     def unused_get_dashboard_items(self, user):
         if False:
