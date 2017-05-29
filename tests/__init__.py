@@ -19,17 +19,17 @@ class SpecsTests(LinoTestCase):
     def test_presto(self):
         self.run_simple_doctests('docs/specs/test_presto.rst')
 
-    def test_psico(self):
-        self.run_simple_doctests('docs/specs/psico.rst')
+#     def test_psico(self):
+#         self.run_simple_doctests('docs/specs/psico.rst')
 
-    def test_teams(self):
-        self.run_simple_doctests('docs/specs/teams.rst')
+#     def test_teams(self):
+#         self.run_simple_doctests('docs/specs/teams.rst')
 
 
 class Tutorials(LinoTestCase):
 
     def test_mini(self):
-        self.run_django_manage_test("lino_presto/projects/psico")
+        self.run_django_manage_test("lino_presto/projects/std")
     
 
 class DumpTests(LinoTestCase):

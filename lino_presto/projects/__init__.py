@@ -22,7 +22,6 @@
    :toctree:
 
    std
-   psico
 
 
 """

@@ -8,5 +8,4 @@ ns.setup_from_tasks(
     # locale_dir='lino_presto/lib/presto/locale',
     cleanable_files=['docs/api/lino_presto.*'],
     demo_projects=[
-        'lino_presto.projects.std.settings.demo',
-        'lino_presto.projects.psico.settings.demo'])
+        'lino_presto.projects.std.settings.demo'])
