@@ -30,8 +30,8 @@ def my_details(sender, **kw):
     site.modules.system.SiteConfigs.set_detail_layout("""
     site_company next_partner_id:10
     default_build_method
-    clients_account   sales_account     sales_vat_account
-    suppliers_account purchases_account purchases_vat_account
+    clients_account   sales_account
+    suppliers_account purchases_account
     wages_account clearings_account
     max_auto_events default_event_type site_calendar
     """)

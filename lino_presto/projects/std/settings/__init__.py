@@ -22,7 +22,7 @@ class Site(Site):
     version = "0.1"
     url = "http://presto.lino-framework.org"
 
-    demo_fixtures = 'std demo euvatrates minimal_ledger demo_bookings payments demo2'.split()
+    demo_fixtures = 'std demo minimal_ledger euvatrates demo_bookings payments demo2'.split()
 
     languages = 'en de fr et'
 
