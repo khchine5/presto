@@ -54,6 +54,8 @@ class Site(Site):
         # 'lino_xl.lib.projects',
         yield 'lino_xl.lib.blogs'
         yield 'lino_xl.lib.notes'
+        yield 'lino_xl.lib.stars'
+        yield 'lino_xl.lib.meetings'
         yield 'lino_presto.lib.tickets'
         yield 'lino_xl.lib.faculties'
         yield 'lino_xl.lib.votes'
